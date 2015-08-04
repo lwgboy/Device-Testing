@@ -1,0 +1,52 @@
+﻿第一次使用firmware-mod-kit會缺少liblzma-dev套件，下載指令如下：
+# apt-get install liblzma-dev
+解開設備firmmare設定檔
+./extract-firmware.sh ~/Downloads/DCS-935L_A1_FW_1.04.112-TEST_20150515_r2926.bin(檔案位置)
+解完後會在firmware-mod-kit/fmk 資料夾裡面
+
+binwalk 可以檢查檔案結構
+binwalk -e 檔名 可以解開檔案 
+ 
+ls -alh 顯示連結檔案的路徑位置
+grep -r admin --color=auto 找關鍵字 admin 用顏色mark
+grep -r -niC 5 admin --color=auto 
+grep -r -iC 5 pw --color=auto
+
+
+DDNS: OSPW_DDNS PW:OSPW_DDNS_PASS
+EMAIL: OSPW_EMAIL PW:OSPW_EMAIL_PASS
+SAMBA: OSPW_SAMBA PW:OSPWSAMBA
+FTP: OSPW_FTP PW:OSPW_FTP_PASS  
+
+clear    base64
+onward1234    b253YXJkMTIzNA==
+OSPW    T1NQVw==
+OSPW_DDNS_PASS  T1NQV19ERE5TX1BBU1M=
+OSPW_EMAIL_PASS  T1NQV19FTUFJTF9QQVNT
+OSPWSAMBA   T1NQV1NBTUJB
+OSPW_FTP_PASS  T1NQV19GVFBfUEFTUw==
+pw    cHc=
+PW    UFc=
+pass    cGFzcw==
+password   cGFzc3dvcmQ=
+pa    cGE=
+PA    UEE=
+PASS    UEFTUw==
+PASSWORD   UEFTU1dPUkQ=
+
+
+
+OSPW|T1NQV
+
+OSPW|T1NQV|onward1234|b253YXJkMTIzNA==
+
+
+clear   URL
+onward1234  %6f%6e%77%61%72%64%31%32%33%34
+OSPW   %4f%53%50%57
+OSPW_DDNS_PASS  %4f%53%50%57%5f%44%44%4e%53%5f%50%41%53%53
+OSPW_EMAIL_PASS  %4f%53%50%57%5f%45%4d%41%49%4c%5f%50%41%53%53
+OSPWSAMBA  %4f%53%50%57%53%41%4d%42%41
+OSPW_FTP_PASS  %4f%53%50%57%5f%46%54%50%5f%50%41%53%53 
+
+OSPW|T1NQV|%4f%53%50%57|pw|PW|pass|PASS|cHc=|UFc=|cGF|UEFTU
