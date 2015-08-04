@@ -1,93 +1,90 @@
-1	Operating System	Remote Vulnerability Testing	Remote Vulnerability Testing
-2	Operating System	Local Vulnerability Testing	Shellshock
-3	Operating System	IPv6 Fuzzing	IPv6 ICMP Echo Request Fuzzing
-4	Operating System	IPv6 Fuzzing	IPv6 ICMP Neighbor Solicitation Fuzzing
-5	Operating System	IPv6 Fuzzing	IPv6 ICMP Neighbor Advertisement Fuzzing
-6	Operating System	IPv6 Fuzzing	IPv6 ICMP Router Advertisement Fuzzing
-7	Operating System	IPv6 Fuzzing	IPv6 Multicast Listen Report Packet Fuzzing
-8	Operating System	IPv6 Fuzzing	IPv6 Multicast Listen Done Packet Fuzzing
-9	Operating System	IPv6 Fuzzing	IPv6 Multicast Listen Query Packet Fuzzing
-10	Operating System	IPv6 Fuzzing	IPv6 Multicast Listen V2 Report Packet Fuzzing
-11	Operating System	IPv6 Fuzzing	IPv6 Multicast Listen V2 Query Packet Fuzzing
-12	Operating System	IPv6 Fuzzing	IPv6 Node Query Packet Fuzzing
-13	Web Interface	Configuration and Deployment Management Testing	Directory Listing
-14	Web Interface	Identity Management Testing	Account Enumeration and Guessable User Account (OTG-IDENT-004)
-15	Web Interface	Authentication Testing	bypassing authentication schema (OTG-AUTHN-004)
-16	Web Interface	Authorization Testing	Directory traversal/file include (OTG-AUTHZ-001)
-17	Web Interface	Authorization Testing	Privilege Escalation (OTG-AUTHZ-003)
-18	Web Interface	Session Management Testing	Cookies attribute (OTG-SESS-002)
-19	Web Interface	Session Management Testing	Session Fixation (OTG-SESS-003)
-20	Web Interface	Session Management Testing	Exposed Session Variable (OTG-SESS-004)
-21	Web Interface	Session Management Testing	Cross Site Request Forgery (OTG-SESS-005)
-22	Web Interface	Session Management Testing	Source IP login testing
-23	Web Interface	Input Validation Testing	Reflected Cross Site Scripting (OTG-INPVAL-001)
-24	Web Interface	Input Validation Testing	Stored Cross Site Scripting (OTG-INPVAL-002)
-25	Web Interface	Input Validation Testing	SQL Injection (OTG-INPVAL-005)
-26	Web Interface	Input Validation Testing	Command Injection (OTG-INPVAL-013)
-27	Web Interface	Input Validation Testing	Buffer overflow (OTG-INPVAL-014)
-28	Web Interface	Input Validation Testing	URL Redirect
-29	Web Interface	Testing for Error Handling	Analysis of Error Code (OTG-ERR-001)
-30	Web Interface	Business Logic Testing	Upload of Unexpected File Types (OTG-BUSLOGIC-008)
-31	Web Interface	Business Logic Testing	Upload of Malicious Files (OTG-BUSLOGIC-009)
-32	Web Interface	Client Side Testing	Clickjacking (OTG-CLIENT-009)
-33	Network Service	Backdoor Detection	Port Scan
-34	Network Service	HTTP Security Testing	Slowloris
-35	Network Service	HTTP Security Testing	HTTP Range Header
-36	Network Service	HTTP Security Testing	RomPager AuthenticationBypass
-37	Network Service	HTTP Security Testing	RomPager DenialOfService
-38	Network Service	HTTP Security Testing	Known HTTP Vulnerability Test
-39	Network Service	HTTP Security Testing	HTTP Fuzzing Test
-40	Network Service	HTTP Security Testing	HTTP Methods
-41	Network Service	HTTPS Security Testing	SSL/TLS Weak Cipher Algorithm
-42	Network Service	HTTPS Security Testing	Known HTTPS Vulnerability Test
-43	Network Service	HTTPS Security Testing	HTTPS Fuzzing Test
-44	Network Service	HTTPS Security Testing	Heartbleed
-45	Network Service	HTTPS Security Testing	ChangeCipherSpec Injection
-46	Network Service	HTTPS Security Testing	FREAK
-47	Network Service	UPnP Security Testing	Known UPnP Vulnerability Test
-48	Network Service	UPnP Security Testing	UPnP Fuzzing Test
-49	Network Service	SMB Security Testing	Known SMB Vulnerability Test
-50	Network Service	SMB Security Testing	Null Session
-51	Network Service	NTP Security Testing	NTP Reflection DDoS
-52	Network Service	NTP Security Testing	Known NTP Vulnerability Test
-53	Network Service	RSTP Security Testing	Known RTSP Vulnerability Test
-54	Network Service	RSTP Security Testing	RTSP Fuzzing Test
-55	Network Service	FTP Security Testing	Known FTP Vulnerability Test
-56	Network Service	TR69 Security Testing	Known TR69 Vulnerability Test
-57	Network Service	DNS Security Testing	Known DNS Vulnerability Test
-58	Network Service	SSH Security Testing	Known SSH Vulnerability Test
-59	Network Service	SSH Security Testing	SSH Weak Cipher Algorithm
-60	Network Service	TFTP Security Testing	Known TFTP Vulnerability Test
-61	Network Service	Telnet Security Testing	Known Telnet Vulnerability Test
-62	Wireless	802.11 WLAN AP Security Testing	WLAN AP Fuzzing Test
-63	Wireless	802.11 WPA Personal AP Security Testing	WPA Personal AP Fuzzing Test
-64	Wireless	WPS Security Testing	WPS crack testing
-65	Password Management	Password Storage Testing	Base64 Encoding Test
-66	Password Management	Password Storage Testing	URL Encoding Test
-67	Password Management	Password Storage Testing	Plaintext storage
-68	Password Management	Hidden Credential Testing	Hardcoded Account
-69	User-side Applicatio	Browser Plugin Security Testing	ActiveX Fuzzing Test
-70	User-side Applicatio	Browser Plugin Security Testing	NPAPI Fuzzing Test
-71	User-side Applicatio	Browser Plugin Security Testing	ActiveX Fuzzing Test
-72	User-side Applicatio	Browser Plugin Security Testing	NPAPI Fuzzing Test
-73	User-side Applicatio	Mobile Application Security Testing	Android Testing
-74	User-side Applicatio	Mobile Application Security Testing	iOS Testing
-75	Denial of Service	IPv4 DoS	IPv4 Ping of Death
-76	Denial of Service	IPv4 DoS	IPv4 Teardrop attacks
-77	Denial of Service	IPv4 DoS	IPv4 Land attacks
-78	Denial of Service	IPv4 DoS	IPv4 SYN flood
-79	Denial of Service	IPv4 DoS	IPv4 SYN-ACK flood
-80	Denial of Service	IPv4 DoS	IPv4 Smurf flood
-81	Denial of Service	IPv4 DoS	IPv4 UDP flood
-82	Denial of Service	IPv4 DoS	IPv4 ICMP flood (Reflection) + IP spoofed
-83	Denial of Service	IPv4 DoS	IPv4 Anomalies
-84	Denial of Service	IPv6 DoS	IPv6 DAD DoS
-85	Denial of Service	IPv6 DoS	IPv6 Neighbor Advertisement Flood
-86	Denial of Service	IPv6 DoS	IPv6 DHCP Client Flood
-87	Denial of Service	IPv6 DoS	IPv6 MLD Report Flood
-88	Denial of Service	IPv6 DoS	IPv6 MLD Router Advertisement Flood
-89	Denial of Service	IPv6 DoS	IPv6 Router Advertisement Flood
-90	Denial of Service	IPv6 DoS	IPv6 Neighbor Solicitation Flood
-91	Denial of Service	IPv6 DoS	IPv6 ICMP error TooBig message Flood
-92	Denial of Service	IPv6 DoS	IPv6 Smurf Flood
-
+1	Remote Vulnerability Testing
+2	Shellshock
+3	IPv6 ICMP Echo Request Fuzzing
+4	IPv6 ICMP Neighbor Solicitation Fuzzing
+5	IPv6 ICMP Neighbor Advertisement Fuzzing
+6	IPv6 ICMP Router Advertisement Fuzzing
+7	IPv6 Multicast Listen Report Packet Fuzzing
+8	IPv6 Multicast Listen Done Packet Fuzzing
+9	IPv6 Multicast Listen Query Packet Fuzzing
+10	IPv6 Multicast Listen V2 Report Packet Fuzzing
+11	IPv6 Multicast Listen V2 Query Packet Fuzzing
+12	IPv6 Node Query Packet Fuzzing
+13	Directory Listing
+14	Account Enumeration and Guessable User Account (OTG-IDENT-004)
+15	bypassing authentication schema (OTG-AUTHN-004)
+16	Directory traversal/file include (OTG-AUTHZ-001)
+17	Privilege Escalation (OTG-AUTHZ-003)
+18	Cookies attribute (OTG-SESS-002)
+19	Session Fixation (OTG-SESS-003)
+20	Exposed Session Variable (OTG-SESS-004)
+21	Cross Site Request Forgery (OTG-SESS-005)
+22	Source IP login testing
+23	Reflected Cross Site Scripting (OTG-INPVAL-001)
+24	Stored Cross Site Scripting (OTG-INPVAL-002)
+25	SQL Injection (OTG-INPVAL-005)
+26	Command Injection (OTG-INPVAL-013)
+27	Buffer overflow (OTG-INPVAL-014)
+28	URL Redirect
+29	Analysis of Error Code (OTG-ERR-001)
+30	Upload of Unexpected File Types (OTG-BUSLOGIC-008)
+31	Upload of Malicious Files (OTG-BUSLOGIC-009)
+32	Clickjacking (OTG-CLIENT-009)
+33	Port Scan
+34	Slowloris
+35	HTTP Range Header
+36	RomPager AuthenticationBypass
+37	RomPager DenialOfService
+38	Known HTTP Vulnerability Test
+39	HTTP Fuzzing Test
+40	HTTP Methods
+41	SSL/TLS Weak Cipher Algorithm
+42	Known HTTPS Vulnerability Test
+43	HTTPS Fuzzing Test
+44	Heartbleed
+45	ChangeCipherSpec Injection
+46	FREAK
+47	Known UPnP Vulnerability Test
+48	UPnP Fuzzing Test
+49	Known SMB Vulnerability Test
+50	Null Session
+51	NTP Reflection DDoS
+52	Known NTP Vulnerability Test
+53	Known RTSP Vulnerability Test
+54	RTSP Fuzzing Test
+55	Known FTP Vulnerability Test
+56	Known TR69 Vulnerability Test
+57	Known DNS Vulnerability Test
+58	Known SSH Vulnerability Test
+59	SSH Weak Cipher Algorithm
+60	Known TFTP Vulnerability Test
+61	Known Telnet Vulnerability Test
+62	WLAN AP Fuzzing Test
+63	WPA Personal AP Fuzzing Test
+64	WPS crack testing
+65	Base64 Encoding Test
+66	URL Encoding Test
+67	Plaintext storage
+68	Hardcoded Account
+69	ActiveX Fuzzing Test
+70	NPAPI Fuzzing Test
+71	Android Testing
+72	iOS Testing
+73	IPv4 Ping of Death
+74	IPv4 Teardrop attacks
+75	IPv4 Land attacks
+76	IPv4 SYN flood
+77	IPv4 SYN-ACK flood
+78	IPv4 Smurf flood
+79	IPv4 UDP flood
+80	IPv4 ICMP flood (Reflection) + IP spoofed
+81	IPv4 Anomalies
+82	IPv6 DAD DoS
+83	IPv6 Neighbor Advertisement Flood
+84	IPv6 DHCP Client Flood
+85	IPv6 MLD Report Flood
+86	IPv6 MLD Router Advertisement Flood
+87	IPv6 Router Advertisement Flood
+88	IPv6 Neighbor Solicitation Flood
+89	IPv6 ICMP error TooBig message Flood
+90	IPv6 Smurf Flood
