@@ -1,7 +1,7 @@
 ﻿第一次使用firmware-mod-kit會缺少liblzma-dev套件，下載指令如下：
 # apt-get install liblzma-dev
 解開設備firmmare設定檔
-./extract-firmware.sh ~/Downloads/DCS-935L_A1_FW_1.04.112-TEST_20150515_r2926.bin(檔案位置)
+./extract-firmware.sh ~/Downloads/xxx.bin(檔案位置)
 解完後會在firmware-mod-kit/fmk 資料夾裡面
 
 binwalk 可以檢查檔案結構
